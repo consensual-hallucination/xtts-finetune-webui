@@ -77,7 +77,7 @@ def format_audio_list(audio_files, target_language="en", whisper_model = "large-
     device = "cuda" if torch.cuda.is_available() else "cpu" 
 
     print("Loading Whisper Model!")
-    asr_model = WhisperModel(whisper_model, device=device, compute_type="float16")
+    asr_model = WhisperModel(whisper_model, device=device, compute_type="int8")
 
     metadata = {"audio_file": [], "text": [], "speaker_name": []}
 
